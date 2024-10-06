@@ -8,14 +8,16 @@ import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 import './css/index.css';
 import theme from './app/MaterialTheme';
-
+import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <App />
+        <Router>
+          <App />
+        </Router>
       </ThemeProvider>
     </Provider>
   </React.StrictMode>,
