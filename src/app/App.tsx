@@ -3,8 +3,13 @@ import "../css/app.css";
 import { Box, Button, Container, Stack, Typography } from '@mui/material';
 import { RippleBadge } from './MaterialTheme/styled';
 import { Link, Route, Router, Switch } from 'react-router-dom';
-import { About } from "./screens/About"
-import { Users } from "./screens/Users"
+
+import { HomePage } from './screens/homePage';
+import { ProductsPage } from './screens/productsPage';
+import { OrdersPage } from './screens/ordersPage';
+import { UserPage } from './screens/userPage';
+import { HelpPage } from './screens/helpPage';
+
 function App() {
   return (
       <div>
@@ -14,38 +19,47 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/product">Products</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/orders">Orders</Link>
             </li>
             <li>
-              <Link to="/product">Product</Link>
+              <Link to="/member-page">User</Link>
+            </li>
+            <li>
+              <Link to="/help">Help</Link>
             </li>
           </ul>
         </nav>
 
         <Switch> {/*home page "/" har doim ohirida bulish kere*/}
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
+        
           <Route path="/product">
-            <Product />
+            <ProductsPage />
           </Route>
+
+          <Route path="/orders">
+            <OrdersPage />
+          </Route>
+
+          <Route path="/member-page">
+            <UserPage />
+          </Route>
+          <Route path="/help">
+            <HelpPage />
+          </Route>
+
           <Route path="/">
-            <Home />
+            <HomePage />
           </Route>
+
         </Switch>
       </div>
   )
 }
 
-function Home() {
-  return <Container>Home</Container>
-}
+
 function Product() {
   return <Container>Product</Container>
 }
