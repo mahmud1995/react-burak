@@ -7,7 +7,8 @@ import { store } from './app/store';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 import './css/index.css';
-import theme from './theme';
+import theme from './app/MaterialTheme';
+
 
 ReactDOM.render(
   <React.StrictMode>
