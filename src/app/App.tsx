@@ -2,39 +2,26 @@ import React from 'react';
 import "../css/app.css";
 import { Box, Button, Container, Stack, Typography } from '@mui/material';
 import { RippleBadge } from './MaterialTheme/styled';
-import { Link, Route, Router, Switch } from 'react-router-dom';
+import { Link, Route, Router, Switch, useLocation } from 'react-router-dom';
 
 import { HomePage } from './screens/homePage';
 import { ProductsPage } from './screens/productsPage';
 import { OrdersPage } from './screens/ordersPage';
 import { UserPage } from './screens/userPage';
 import { HelpPage } from './screens/helpPage';
+import { HomeNavbar } from './components/headers/HomeNavbar';
+import { OtherNavbar } from './components/headers/OtherNavbar';
+import { Footer } from './components/footer';
 
 function App() {
+  const location = useLocation();
+  console.log("location:", location);
   return (
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/product">Products</Link>
-            </li>
-            <li>
-              <Link to="/orders">Orders</Link>
-            </li>
-            <li>
-              <Link to="/member-page">User</Link>
-            </li>
-            <li>
-              <Link to="/help">Help</Link>
-            </li>
-          </ul>
-        </nav>
+      <>
+{/*home page "/" har doim ohirida bulish kere*/}
+        {location.pathname === "/" ? <HomeNavbar /> : <OtherNavbar />}
+        <Switch>
 
-        <Switch> {/*home page "/" har doim ohirida bulish kere*/}
-        
           <Route path="/product">
             <ProductsPage />
           </Route>
@@ -55,7 +42,8 @@ function App() {
           </Route>
 
         </Switch>
-      </div>
+        <Footer />
+      </>
   )
 }
 
