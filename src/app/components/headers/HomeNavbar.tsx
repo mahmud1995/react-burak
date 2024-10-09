@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 
 export function HomeNavbar() {
     const authMember = null;
-   
     return (
     <div className="home-navbar">
          <Container className="navbar-container">
@@ -24,7 +23,6 @@ export function HomeNavbar() {
                     minWidth={"700px"}
                     alignItems={"center"}
                 >
-
                 <Box className={"hover-line"}>
                     <NavLink to={"/"} activeClassName={"underline"}>Home</NavLink>
                 </Box>
@@ -44,10 +42,6 @@ export function HomeNavbar() {
                 <Box className={"hover-line"}>
                     <NavLink to={"/help"} activeClassName={"underline"}>Help</NavLink>
                 </Box>
-
-
-
-
                 {/* Basket */}
                 {!authMember ? (
                     <Box>
@@ -62,7 +56,32 @@ export function HomeNavbar() {
                 )}
                 </Stack>
             </Stack>
-            <Stack>Detail</Stack>
+
+            <Stack className={"header-frame"}>
+                <Stack className={"detail"}>
+                    <Box className={"head-main-text"}>
+                        World's Most Delicious Cousine
+                    </Box>
+                    <Box className={"wel-txt"}>
+                        The Choice, not just a choice
+                    </Box>
+                    <Box className={"service-text"}>
+                        24 hours service
+                    </Box>
+                    <Box className={"signup"}>
+                        {!authMember ? (
+                            <Button 
+                            variant={"contained"} 
+                            className={"signup-button"}>
+                                SIGN UP
+                            </Button>
+                            ) : null}
+                    </Box>
+                </Stack>
+                <Box className={"logo-frame"}>
+                    <div className={"logo-img"}></div>
+                </Box>
+            </Stack>
         </Container>
     </div>
     );
