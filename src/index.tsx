@@ -9,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import './css/index.css';
 import theme from './app/MaterialTheme';
 import { BrowserRouter as Router } from 'react-router-dom';
+import styled from 'styled-components'
 
 const container = document.getElementById('root');
 
