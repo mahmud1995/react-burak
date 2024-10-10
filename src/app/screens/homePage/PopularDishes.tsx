@@ -24,12 +24,13 @@ export default function PopularDishes () {
                 <Stack className="popular-section">
                     <Box className="category-title">Popular Dishes</Box>
                     <Stack className="cards-frame">
-                        {list.map((ele, index) => {
-                            return(
-                                <CssVarsProvider key={index}>
-                                <Card className={"card"}>
-                                    <CardCover>
-                                        <img src={ele.imagePath} alt="" />
+                        {list.length !== 0 ? (
+                            list.map((ele, index) => {
+                                return(
+                                    <CssVarsProvider key={index}>
+                                        <Card className={"card"}>
+                                            <CardCover>
+                                            <img src={ele.imagePath} alt="" />
                                     </CardCover>
                                     <CardCover className={"card-cover"}/>
                                     <CardContent sx={{ justifyContent: 'flex-end' }}>
@@ -56,7 +57,7 @@ export default function PopularDishes () {
                                             display: "flex",
                                             gap: 1.5, 
                                             py: 1.5,
-                                            px: "var(--Card-padding",
+                                            px: "var(--Card-padding)",
                                             borderTop: "1px solid",
                                             height: "60px",
                                         }}
@@ -70,11 +71,14 @@ export default function PopularDishes () {
                                     </CardOverflow>
                                 </Card>
                             </CssVarsProvider>
-                            )
-                        })};
-                    </Stack>
+                            )}) 
+                ) : ( 
+                    <Box className="no-date"> Popular products are not available!</Box>
+                )}
+                        
                 </Stack>
-            </Container>
-        </div>
-    )
+            </Stack>
+        </Container>
+    </div>
+    );
 }
