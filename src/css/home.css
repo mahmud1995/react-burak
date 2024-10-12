@@ -132,6 +132,7 @@
 }
 
 .home-page .main {
+    margin-top: 6%;    
     margin-top: 45px;
     display: flex;
     flex-direction: column;
@@ -139,6 +140,7 @@
 }
 
 .home-page .new-products-frame .category-title {
+    margin-bottom: 4%;
     font-family: "Dancing Script";
     font-style: normal;
     font-weight: 700;
@@ -179,7 +181,7 @@
     color: #f8f8ff;
 }
 
-.home-page .new-products-frame .prodct-detail {
+.home-page .new-products-frame .product-detail {
     height: 49%;
     width: auto;
     display: flex;
@@ -190,7 +192,7 @@
     background-color: #fafbfb;
 }
 
-.home-page .new-products-frame .prodct-detail .info {
+.home-page .new-products-frame .product-detail .info {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -198,24 +200,24 @@
     align-items: center;
 }
 
-.home-page .new-products-frame .prodct-detail .title {
+.home-page .new-products-frame .product-detail .title {
     width: 65px;
     font-weight: 500;
 }
 
-.home-page .new-products-frame .prodct-detail .price {
+.home-page .new-products-frame .product-detail .price {
     margin-left: 10px;
     width: 20px;
     font-weight: 500;
 }
 
-.home-page .new-products-frame .prodct-detail .divider {
+.home-page .new-products-frame .product-detail .divider {
     margin: 0 10px 0 10px;
     width: 2px;
     background-color: #d9d9d9;
 }
 
-.home-page .new-products-frame .prodct-detail .views {
+.home-page .new-products-frame .product-detail .views {
     display: flex;
     align-items: center;
     font-weight: 500;
@@ -246,7 +248,6 @@
     transform:  perspective(0px);
     box-shadow: -3px 0px 20px 14px #34343480;
 }
-
 .home-page .ads-restaurant-frame .ads-video {
     width: 100%;
     background: #0c0e12;
@@ -256,62 +257,61 @@
 }
 
 
-/* Active Users */
-
 /** ACTIVE USERS **/
 
-.homepage .active-users-frame {
+.home-page .active-users-frame {
     width: 100%;
     height: 605px;
-    background: #f8f8f8;
+    background: #f8f8ff;
     display: flex;
 }
 
-.homepage .active-users-frame .main {
-    margin-top: 80px;
+.home-page .active-users-frame .main {
+    margin-top: 6%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
-.homepage .active-users-frame .category-title {
-    font-family: 'Dancing Script';
+.home-page .active-users-frame .category-title {
+    margin-bottom: 4%;
+    text-align: center;
+    font-family: "Roboto Serif";
+    font-size: 36px;
     font-style: normal;
     font-weight: 700;
-    font-size: 36px;
-    line-height: 43px;
+    line-height: normal;
+    letter-spacing: 1.44px;
 }
 
-.homepage .active-users-frame .main .cards-frame {
+.home-page .active-users-frame .cards-frame {
     width: 100%;
-    margin: 30px 0px 0px 0px;
+    margin: 47px, 2px, 2px, 2px;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.homepage .active-users-frame .main .card {
-    height: 345px;
-    width: 305px;
+.home-page .active-users-frame .main .card {
+    height: 335px;
+    width: 290px;
     cursor: pointer;
 }
 
-.homepage .active-users-frame .main .card .member-nickname {
-    display: flex;
-    justify-content: center;
-    font-weight: 500;
-    font-family: 'Roboto Serif';
-    font-style: normal;
-    font-size: 18px;
+.home-page .active-users-frame .main .cards-frame .member-nickname {
+    text-align: center;
+    font-family: "Roboto Serif";
+    font-size: 20px;
 }
 
-.homepage .active-users-frame .no-data {
+.home-page .active-users-frame .no-data {
     width: 100%;
     height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-transform: capitalize;
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 400;
     font-size: 30px;
@@ -321,32 +321,33 @@
 
 /** EVENTS **/
 
-.homepage .events-frame {
+
+.home-page .events-frame {
     width: 100%;
     height: 745px;
     background: #f8f8ff;
     display: flex;
-  }
+}
   
-  .homepage .events-frame .category-title {
+.home-page .events-frame .category-title {
     font-family: "Dancing Script";
     font-style: normal;
     font-weight: 700;
     font-size: 36px;
     line-height: 43px;
     padding-top: 20px;
-  }
+}
   
-  .homepage .events-frame .events-main {
+.home-page .events-frame .events-main {
     position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+    }
   
-  .homepage .events-frame .events-main .events-text {
+.home-page .events-frame .events-main .events-text {
     width: auto;
     height: 70px;
     margin-bottom: 40px;
@@ -354,9 +355,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
+}
   
-  .homepage .events-frame .events-main .prev-next-frame {
+.home-page .events-frame .events-main .prev-next-frame {
     position: relative;
     display: flex;
     justify-content: center;
@@ -364,15 +365,15 @@
     width: 250px;
     margin: 40px 0 40px 0;
     height: 25px;
-  }
+}
   
-  .homepage .events-frame .dot-frame-pagination {
+.home-page .events-frame .dot-frame-pagination {
     position: relative;
     width: auto;
     display: flex;
   }
   
-  .homepage .events-frame .events-main .events-info {
+  .home-page .events-frame .events-main .events-info {
     width: 100%;
     height: 100%;
     display: flex;
@@ -380,7 +381,7 @@
     justify-content: space-between;
   }
   
-  .homepage .events-frame .events-info .events-info-frame {
+  .home-page .events-frame .events-info .events-info-frame {
     position: relative;
     width: 500px;
     height: 100%;
@@ -389,7 +390,7 @@
     align-items: center;
   }
   
-  .homepage .events-frame .events-img {
+  .home-page .events-frame .events-img {
     width: 100%;
     height: 100%;
     display: flex;
@@ -397,7 +398,7 @@
     background-size: cover;
   }
   
-  .homepage .events-frame .events-desc {
+  .home-page .events-frame .events-desc {
     position: absolute;
     margin-bottom: 7px;
     padding: 10px;
@@ -410,7 +411,7 @@
     border-radius: 8px;
   }
   
-  .homepage .events-frame .events-desc .events-bott {
+  .home-page .events-frame .events-desc .events-bott {
     width: 97%;
     height: auto;
     display: flex;
@@ -419,37 +420,37 @@
     align-items: center;
   }
   
-  .homepage .events-frame .events-desc .events-bott .bott-left {
+  .home-page .events-frame .events-desc .events-bott .bott-left {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
   }
   
-  .homepage .events-frame .bott-left .event-title-speaker {
+  .home-page .events-frame .bott-left .event-title-speaker {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
   
-  .homepage .events-frame .event-title-speaker .event-organizator {
+  .home-page .events-frame .event-title-speaker .event-organizator {
     display: flex;
     align-items: center;
   }
   
-  .homepage .events-frame .event-title-speaker .event-organizator img {
+  .home-page .events-frame .event-title-speaker .event-organizator img {
     width: 20px;
     margin-right: 10px;
   }
   
-  .homepage .events-frame .event-organizator .spec-text-author {
+  .home-page .events-frame .event-organizator .spec-text-author {
     font-family: "GT Walsheim Pro";
     font-style: normal;
     line-height: 34px;
     color: #140342;
   }
   
-  .homepage .events-frame .bott-left .text-desc {
+  .home-page .events-frame .bott-left .text-desc {
     margin-top: 10px;
     font-family: "GT Walsheim Pro";
     font-style: normal;
@@ -459,7 +460,7 @@
     color: #4f547b;
   }
   
-  .homepage .events-frame .bott-left .bott-info {
+  .home-page .events-frame .bott-left .bott-info {
     margin-top: 10px;
     display: flex;
     justify-content: flex-end;
@@ -468,7 +469,7 @@
     height: 16px;
   }
   
-  .homepage .events-frame .bott-info .bott-info-main {
+  .home-page .events-frame .bott-info .bott-info-main {
     margin-left: 10px;
     display: flex;
     justify-content: space-between;
@@ -483,16 +484,16 @@
     color: #4f547b;
   }
   
-  .homepage .events-frame .bott-info .bott-info-main img {
+  .home-page .events-frame .bott-info .bott-info-main img {
     margin-right: 10px;
   }
   
-  .homepage .events-frame .swiper-wrapper {
+  .home-page .events-frame .swiper-wrapper {
     display: flex;
     flex-direction: row;
   }
   
-  .homepage .events-frame .swiper-pagination-bullet {
+  .home-page .events-frame .swiper-pagination-bullet {
     margin-right: 5px;
     width: 8px;
     height: 8px;
@@ -502,8 +503,8 @@
     border-radius: 50%;
   }
   
-  .homepage .events-frame .swiper-pagination-bullet-active {
+  .home-page .events-frame .swiper-pagination-bullet-active {
     background: #343434;
     border-radius: 50%;
-  }
-  
+  } 
+

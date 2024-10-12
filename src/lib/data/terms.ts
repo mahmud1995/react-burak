@@ -1,4 +1,3 @@
-
 export const terms = [
 	'Making orders from the site is complete, live register to use communications you must pass.',
 	'This is why you cannot cancel your orders once you have paid for them check before making payments.',
