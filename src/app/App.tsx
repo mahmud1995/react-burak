@@ -1,7 +1,6 @@
 import React from 'react';
-import { Box, Button, Container, Stack, Typography } from '@mui/material';
-import { RippleBadge } from './MaterialTheme/styled';
-import { Link, Route, Router, Switch, useLocation } from 'react-router-dom';
+// import { Box, Button, Container, Stack, Typography } from '@mui/material';
+import { Link, Route, Switch, useLocation } from 'react-router-dom';
 import HomePage from './screens/homePage';
 import ProductsPage from './screens/productsPage';
 import OrdersPage from './screens/ordersPage';
@@ -13,6 +12,7 @@ import Footer from './components/footer';
 import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
+import Test from './screens/Test';
 
 
 function App() {
@@ -40,7 +40,8 @@ function App() {
           </Route>
 
           <Route path="/">
-            <HomePage />
+            <Test />
+            {/* <HomePage /> */}
           </Route>
 
         </Switch>
