@@ -9,6 +9,13 @@ import { CssVarsProvider } from "@mui/joy/styles";
 import CardOverflow  from "@mui/joy/CardOverflow";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined"
+import { createSelector } from "reselect";
+import { retrievePopularDishes } from "./selector";
+import { useSelector } from "react-redux";
+import { Product } from "../../../lib/types/product";
+import { Dispatch } from "@reduxjs/toolkit";
+import { setPopularDishes } from "./slice";
+
 
 const list = [
     {productName: "Lavash", imagePath: "/img/lavash.webp"},
@@ -18,6 +25,7 @@ const list = [
 ]
 
 export default function PopularDishes () {
+
     return (
         <div className="popular-dishes-frame">
             <Container>
