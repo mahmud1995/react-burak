@@ -8,16 +8,20 @@ import Events from "./Events";
 import ProductService from "../../services/ProductService";
 import { ProductCollection } from "../../../lib/enums/product.enum";
 import { setNewDishes, setPopularDishes } from "./slice";
+import { setTopUsers } from "./slice";
 import { Dispatch } from "@reduxjs/toolkit";
 import { createSelector } from "reselect";
 import { Product } from "../../../lib/types/product";
 import { retrievePopularDishes } from "./selector";
 import { useDispatch, useSelector } from "react-redux";
 import "../../../css/home.css"
+import MemberService from "../../services/MemberService"
+import {Member} from "../../../lib/types/member";
 /** REDUX SLICE & SELECTOR */
 const actionDispatch = (dispatch: Dispatch) => ({
     setPopularDishes: (data: Product[]) => dispatch(setPopularDishes(data)),
     setNewDishes: (data: Product[]) => dispatch(setNewDishes(data)),
+    setTopUsers: (data: Member[]) => dispatch(setTopUsers(data)),
 });
     
 const popularDishesRetriever = createSelector(
@@ -26,8 +30,9 @@ const popularDishesRetriever = createSelector(
 );
 // import './css/home.css'
 export default function HomePage() {
-    const { setPopularDishes } = actionDispatch(useDispatch);
-    const { popularDishes} = useSelector(popularDishesRetriever)
+    // const { setPopularDishes } = actionDispatch(useDispatch);
+    // const { popularDishes} = useSelector(popularDishesRetriever)
+    const {setPopularDishes, setNewDishes, setTopUsers } = actionDispatch(useDispatch());
     
     useEffect(() => {
         // Backend server data FETCH => DATA
@@ -51,7 +56,15 @@ export default function HomePage() {
             console.log("data passed here:", data);
             setNewDishes(data);
         }).catch((err) => console.log(err));
-    })
+
+        const member = new MemberService();
+        member
+            .getTopUsers()
+            .then((data) => setTopUsers(data))
+            .catch((err) => console.log(err));
+    }, []);
+
+
 
     return <div className={"home-page"}>
         <Statistics />
