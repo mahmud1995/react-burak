@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "../../../css/home.css"
 import MemberService from "../../services/MemberService"
 import {Member} from "../../../lib/types/member";
+
 /** REDUX SLICE & SELECTOR */
 const actionDispatch = (dispatch: Dispatch) => ({
     setPopularDishes: (data: Product[]) => dispatch(setPopularDishes(data)),
@@ -24,16 +25,14 @@ const actionDispatch = (dispatch: Dispatch) => ({
     setTopUsers: (data: Member[]) => dispatch(setTopUsers(data)),
 });
     
-const popularDishesRetriever = createSelector(
-    retrievePopularDishes,
-    (popularDishes) => ({ popularDishes })
-);
+
 // import './css/home.css'
 export default function HomePage() {
     // const { setPopularDishes } = actionDispatch(useDispatch);
     // const { popularDishes} = useSelector(popularDishesRetriever)
     const {setPopularDishes, setNewDishes, setTopUsers } = actionDispatch(useDispatch());
     
+    console.log("process.env.REACT_APP_API_URL:",process.env.REACT_APP_API_URL);
     useEffect(() => {
         // Backend server data FETCH => DATA
         const product = new ProductService();
@@ -43,7 +42,6 @@ export default function HomePage() {
             order: "prductViews",
             productCollection: ProductCollection.DISH,
         }).then(data => {
-            console.log("data passed here:", data);
             setPopularDishes(data);
         }).catch((err) => console.log(err));
 
@@ -51,7 +49,7 @@ export default function HomePage() {
             page: 1,
             limit: 4,
             order: "createdAt",
-            productCollection: ProductCollection.DISH,
+            // productCollection: ProductCollection.DISH,
         }).then(data => {
             console.log("data passed here:", data);
             setNewDishes(data);

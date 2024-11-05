@@ -16,12 +16,12 @@ const topUsersRetriever = createSelector(retrieveTopUsers,
     (topUsers) => ({ topUsers })
 );
 
-const activeUsers = [
-    { memberNick: "Martin", memberImage: "/img/martin.webp" },
-    { memberNick: "Justin", memberImage: "/img/justin.webp" },
-    { memberNick: "Rose", memberImage: "/img/rose.webp" },
-    { memberNick: "Nusret", memberImage: "/img/nusret.webp" },
-];
+// const activeUsers = [
+//     { memberNick: "Martin", memberImage: "/img/martin.webp" },
+//     { memberNick: "Justin", memberImage: "/img/justin.webp" },
+//     { memberNick: "Rose", memberImage: "/img/rose.webp" },
+//     { memberNick: "Nusret", memberImage: "/img/nusret.webp" },
+// ];
 
 
 export default function ActiveUsers() {
