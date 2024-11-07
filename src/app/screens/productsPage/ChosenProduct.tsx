@@ -1,4 +1,5 @@
 import React from "react";
+import { createSelector, Dispatch } from "@reduxjs/toolkit";
 import { Container, Stack, Box } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
@@ -10,6 +11,22 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper";
+import { setChosenProduct, setRestaurant } from "./slice";
+import { Product } from "../../../lib/types/product";
+import { retrieveChoseProduct, retrieveRestaurant } from "./selector";
+
+
+const actionDispatch = (dispatch: Dispatch) => ({
+  setRestaurant: (data: Product[]) => dispatch(setRestaurant(data)),
+  setChosenProduct: (data: Product[]) => dispatch(setChosenProduct(data)),
+});
+
+const chosenProductRetriever = createSelector(
+  retrieveChoseProduct, (chosenProduct) => ({chosenProduct}))
+
+
+const restaurantRetriever = createSelector(
+  retrieveRestaurant, (restaurant) => ({restaurant}))  
 
 export default function ChosenProduct() {
   return (
