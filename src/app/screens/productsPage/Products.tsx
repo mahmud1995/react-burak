@@ -83,8 +83,7 @@ export default function Products () {
     };
 
     const chooseDishHandler = (id: string) => {
-        // console.log("productsId:", id) 
-        history.push(`/product/${id}`);
+        history.push(`/products/${id}`); // mana shu yerda url settings qilsa buladi
     }
 
     return (
@@ -184,21 +183,21 @@ export default function Products () {
                                             key={product._id} 
                                             className={"product-card"}
                                             onClick={() => chooseDishHandler(product._id)}
-                                            
                                             >
-                                            <Stack className={"product-img"} sx={{ backgroundImage: `url(${imagePath})`}}>
+                                            <Stack 
+                                                className={"product-img"} 
+                                                sx={{ backgroundImage: `url(${imagePath})`}}>
                                                 <div className={"product-sale"}>{sizeVolume}</div>
                                                 <Button className={"shop-btn"}>
                                                     <img src={"/icons/shopping-cart.svg"} style={{ display: "flex"}}/>
                                                 </Button>
-                                                <Button className={"view-btn"} sx={{right: "36px"}}>
+                                                <Button className={"view-btn"} sx={{right: "25px"}}>
                                                     <Badge 
                                                         badgeContent={product.productViews} 
                                                         color="secondary"
                                                     >
                                                         <RemoveRedEyeIcon 
                                                             sx={{ 
-                                                                // color: 20 ? "gray" : "white",
                                                                 color: product.productViews === 0 ? "gray" : "white",
                                                                 }}
                                                         />

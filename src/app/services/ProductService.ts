@@ -29,7 +29,7 @@ class ProductService {
         try {
             const url = `${this.path}/product/${productId}`;
             const result = await axios.get(url, { withCredentials: true});
-
+            console.log("getPRoducts:", result);
             return result.data;
 
         } catch (err) {
@@ -37,6 +37,8 @@ class ProductService {
             throw err;
         }
     }
+
+
 }
 
 export default ProductService;
