@@ -10,6 +10,7 @@ import './css/index.css';
 import theme from './app/MaterialTheme';
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components'
+import ContextProvider from './app/context/ContextProvider';
 
 const container = document.getElementById('root');
 
@@ -18,12 +19,14 @@ if (container) {
   root.render(
     <React.StrictMode>
       <Provider store={store}>
-      <ThemeProvider theme={theme}>
+        <ContextProvider>
+        <ThemeProvider theme={theme}>
           <CssBaseline />
           <Router>
             <App />
           </Router>
       </ThemeProvider>
+        </ContextProvider>
       </Provider>
     </React.StrictMode>
   );
